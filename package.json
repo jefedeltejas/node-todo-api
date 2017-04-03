@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/jefedeltejas/node-todo-api/issues"
   },
-  "homepage": "https://github.com/jefedeltejas/node-todo-api#readme"
+  "homepage": "https://github.com/jefedeltejas/node-todo-api#readme",
+  "dependencies": {
+    "mongodb": "^2.2.25"
+  }
 }
