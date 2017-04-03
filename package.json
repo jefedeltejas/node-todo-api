@@ -1,0 +1,23 @@
+{
+  "name": "node-todo-api",
+  "version": "1.0.0",
+  "description": "this is gonna be the todo api created with a MEAN stack (Node, Mongo, et al).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jefedeltejas/node-todo-api.git"
+  },
+  "keywords": [
+    "todo",
+    "list"
+  ],
+  "author": "jackalope",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jefedeltejas/node-todo-api/issues"
+  },
+  "homepage": "https://github.com/jefedeltejas/node-todo-api#readme"
+}
