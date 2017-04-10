@@ -14,9 +14,12 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
   }
   console.log('Connected to Mongo server');
 
-// deleteOne
-
 // deleteMany
+db.collection('Todos').deleteMany({text: 'Han äter en smörgås'}).then((result) => {
+    console.log(result);
+  });
+
+// deleteOne
 
 // findOneAndDelete
 
