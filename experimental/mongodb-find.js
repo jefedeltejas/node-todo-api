@@ -14,7 +14,11 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
   }
   console.log('Connected to Mongo server');
 
-
+  db.collection('Todos').find().count().then((count) => {
+    console.log(`Todos count: ${count}`);
+  }, (err) => {
+    console.log('Unable to get them todos fo ya main.', err);
+  });
 
   // db.collection('Todos').find({
   //   _id: new ObjectID('58e99e2637fae86baa92e924')
@@ -25,20 +29,21 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
   //   console.log('Unable to get them todos fo ya main.', err);
   // });
 
-  db.collection('Todos').find().count().then((count) => {
-    console.log(`Todos count: ${count}`);
+  db.collection('Todos').find({}).toArray().then((docs) => {
+    console.log('Todos');
+    console.log(JSON.stringify(docs, undefined, 2));
   }, (err) => {
     console.log('Unable to get them todos fo ya main.', err);
   });
 
-  db.collection('Users').find({
-    name: 'Chad Butler'
-  }).toArray().then((docs) => {
-    console.log('Users');
-    console.log(JSON.stringify(docs, undefined, 2));
-  }, (err) => {
-    console.log('Sorry dawg, can\'t find them users.', err);
-  });
+  // db.collection('Users').find({
+  //   name: 'Chad Butler'
+  // }).toArray().then((docs) => {
+  //   console.log('Users');
+  //   console.log(JSON.stringify(docs, undefined, 2));
+  // }, (err) => {
+  //   console.log('Sorry dawg, can\'t find them users.', err);
+  // });
 
   db.close();
 });
