@@ -36,14 +36,14 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
   //   console.log('Unable to get them todos fo ya main.', err);
   // });
 
-  db.collection('Users').find({
-    name: 'Chad Butler'
-  }).toArray().then((docs) => {
-    console.log('Users');
-    console.log(JSON.stringify(docs, undefined, 2));
-  }, (err) => {
-    console.log('Sorry dawg, can\'t find them users.', err);
-  });
+  // db.collection('Users').find({
+  //   name: 'Chad Butler'
+  // }).toArray().then((docs) => {
+  //   console.log('Users');
+  //   console.log(JSON.stringify(docs, undefined, 2));
+  // }, (err) => {
+  //   console.log('Sorry dawg, can\'t find them users.', err);
+  // });
 
   // db.collection('Users').find({
   //   name: 'Young Geezy'
@@ -53,6 +53,13 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
   // }, (err) => {
   //   console.log('Sorry dawg, can\'t find them users.', err);
   // });
+
+  db.collection('Users').find({}).toArray().then((docs) => {
+    console.log('Users');
+    console.log(JSON.stringify(docs, undefined, 2));
+  }, (err) => {
+    console.log('Sorry dawg, can\'t find them users.', err);
+  });
 
   db.close();
 });
