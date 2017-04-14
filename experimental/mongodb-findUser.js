@@ -14,26 +14,36 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
   }
   console.log('Connected to Mongo server');
 
-  db.collection('Todos').find().count().then((count) => {
-    console.log(`Todos count: ${count}`);
+  db.collection('Users').find().count().then((count) => {
+    console.log(`Users count: ${count}`);
   }, (err) => {
-    console.log('Unable to get them todos fo ya main.', err);
+    console.log('Unable to get them users fo ya main.', err);
   });
 
-  // db.collection('Todos').find({
+  // db.collection('Users').find({
   //   _id: new ObjectID('58e99e2637fae86baa92e924')
   // }).toArray().then((docs) => {
   //   console.log('Todos');
   //   console.log(JSON.stringify(docs, undefined, 2));
   // }, (err) => {
-  //   console.log('Unable to get them todos fo ya main.', err);
+  //   console.log('Unable to get them users fo ya main.', err);
   // });
 
-  // db.collection('Todos').find({}).toArray().then((docs) => {
-  //   console.log('Todos');
+  db.collection('Users').find({
+    _id: new ObjectID('58f03352948fe04f3bb8045a')
+  }).toArray().then((docs) => {
+    console.log('Todos');
+    console.log(JSON.stringify(docs, undefined, 2));
+  }, (err) => {
+    console.log('Unable to get them users fo ya main.', err);
+  });
+
+
+  // db.collection('Users').find({}).toArray().then((docs) => {
+  //   console.log('Users');
   //   console.log(JSON.stringify(docs, undefined, 2));
   // }, (err) => {
-  //   console.log('Unable to get them todos fo ya main.', err);
+  //   console.log('Unable to get them users fo ya main.', err);
   // });
 
   // db.collection('Users').find({
@@ -55,7 +65,8 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
   // });
 
   db.collection('Users').find({}).toArray().then((docs) => {
-    console.log('Users');
+    console.log('Users list');
+    console.log('Say dawg, I got them users fo ya main.');
     console.log(JSON.stringify(docs, undefined, 2));
   }, (err) => {
     console.log('Sorry dawg, can\'t find them users.', err);
