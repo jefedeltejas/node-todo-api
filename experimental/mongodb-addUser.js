@@ -42,9 +42,9 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
   // });
 
 
-  db.collection('Users').find().count().then((count) => {
-
-  });
+  // db.collection('Users').find().count().then((count) => {
+  //
+  // });
 
   // db.collection('Todos').find().count().then((count) => {
   //
