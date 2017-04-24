@@ -12,10 +12,10 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
   console.log('Connected to Mongo server');
 
   db.collection('Todos').findOneAndUpdate({
-    _id: new ObjectID('')
+    _id: new ObjectID('58fdff20e652c14e9acdb60b')
   }, {
     $set: {
-      text: 'some text here'
+      text: 'what would you do? if them fools disrespected you'
     }
   }, {
     returnOriginal: false
