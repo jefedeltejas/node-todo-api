@@ -15,7 +15,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
   console.log('Connected to Mongo server');
 
   // db.collection('Todos').insertOne({
-  //   text: 'Han äter en smörgås',
+  //   text: 'Vad gör du om någonting disrespected dig',
   //   completed: false
   // }, (err, result) => {
   //   if (err) {
@@ -24,7 +24,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
   //   console.log(JSON.stringify(result.ops, undefined, 2));
   // });
 
-  
+
 
 
 
