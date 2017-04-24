@@ -18,7 +18,7 @@ db.collection('Users').findOneAndUpdate({
   _id: new ObjectID('58fddddf69b44461f50dcd00')
 }, {
   $set: {
-    completed: true
+    location: 'H-Town Jungle'
   }
 }, {
   returnOriginal: false
