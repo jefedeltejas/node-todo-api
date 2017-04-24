@@ -40,18 +40,6 @@ db.collection('Users').findOneAndUpdate({
   //   console.log(result.ops[0]._id.getTimestamp());
   // });
   //
-  // // var connect = db.collection('Users').find({});
-  // // console.log(connect);
-  //
-  // //
-  // // db.collection('Users').find().count().then((count) => {
-  // //
-  // // });
-  //
-  // // db.collection('Todos').find().count().then((count) => {
-  // //
-  // // });
-
 
   db.close();
 });
