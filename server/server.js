@@ -25,11 +25,11 @@ var Todo = mongoose.model('Todo', {
 //   console.log('Unable to save todo');
 // });
 //
-// var otherTodo = new Todo({
-//   text: 'Buy baby milk',
-//   completed: true,
-//   completedAt: 123
-// });
+var otherTodo = new Todo({
+  text: 'Buy baby milk',
+  completed: true,
+  completedAt: 123
+});
 
 otherTodo.save().then((doc) => {
   console.log(JSON.stringify(doc, undefined, 2));
