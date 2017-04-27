@@ -9,4 +9,20 @@ var User = mongoose.model('User', {
   }
 });
 
+// User
+// email -- require it -- trim it -- set type -- set min length of 1
+
+
+
+// var user = new User({
+//   email: 'user@yomama.com   '
+// });
+//
+// user.save().then((doc) => {
+//   console.log('User saved', doc);
+// }, (e) => {
+//   console.log('Unable to save user.');
+// });
+
+
 module.exports = {User};
