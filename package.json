@@ -4,7 +4,8 @@
   "description": "this is gonna be the todo api created with a MEAN stack (Node, Mongo, et al).",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha server/**/*.test.js",
+    "test-watch": "nodemon --exec 'npm test'"
   },
   "repository": {
     "type": "git",
