@@ -8,6 +8,7 @@ const _ = require('lodash'),
 var {mongoose} = require('./db/mongoose'),
     {Todo} = require('./models/todo'),
     {User} = require('./models/user'),
+    {authenticate} = require('./middleware/authenticate'),
     app = express();
 
 const port = process.env.PORT || 3000;
@@ -98,9 +99,9 @@ app.patch('/todos/:id', (req, res) => {
   })
 });
 
+// POST /users
 app.post('/users', (req, res) => {
   var body = _.pick(req.body, ['email', 'password']);
-  // console.log(req.body);
   var user = new User(body);
 
   user.save().then(() => {
@@ -110,6 +111,10 @@ app.post('/users', (req, res) => {
   }).catch((e) => {
     res.status(400).send(e);
   });
+});
+
+app.get('/users/me', authenticate, (req, res) => {
+  res.send(req.user);
 });
 
 app.listen(port, () => {
